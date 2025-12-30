@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Herr und Frau Meier</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @keyframes die-shake {
+      0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+      20% { transform: translate(-3px, 2px) rotate(-8deg) scale(1.02); }
+      40% { transform: translate(3px, -2px) rotate(8deg) scale(0.98); }
+      60% { transform: translate(-3px, -2px) rotate(-10deg) scale(1.02); }
+      80% { transform: translate(3px, 2px) rotate(10deg) scale(0.98); }
+      100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    }
+    .animate-die-shake {
+      animation: die-shake 0.12s infinite linear;
+    }
+
+    /* Intense animation for player's roll */
+    @keyframes die-shake-impactful {
+      0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+      15% { transform: translate(-8px, 6px) rotate(-18deg) scale(1.12); }
+      30% { transform: translate(8px, -6px) rotate(18deg) scale(0.9); }
+      45% { transform: translate(-10px, -4px) rotate(-22deg) scale(1.18); }
+      60% { transform: translate(10px, 4px) rotate(22deg) scale(0.92); }
+      75% { transform: translate(-6px, 8px) rotate(-12deg) scale(1.08); }
+      90% { transform: translate(6px, -8px) rotate(12deg) scale(0.95); }
+      100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    }
+    .animate-die-shake-impactful {
+      animation: die-shake-impactful 0.15s infinite ease-in-out;
+    }
+    
+    /* Reveal Glow Animations */
+    @keyframes glow-success {
+      0%, 100% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.6), inset 0 0 10px rgba(34, 197, 94, 0.4); border-color: #22c55e; }
+      50% { box-shadow: 0 0 40px rgba(34, 197, 94, 0.9), inset 0 0 20px rgba(34, 197, 94, 0.6); border-color: #4ade80; }
+    }
+    .animate-glow-success {
+      animation: glow-success 1.5s infinite ease-in-out;
+    }
+
+    @keyframes glow-fail {
+      0%, 100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.6), inset 0 0 10px rgba(239, 68, 68, 0.4); border-color: #ef4444; }
+      50% { box-shadow: 0 0 40px rgba(239, 68, 68, 0.9), inset 0 0 20px rgba(239, 68, 68, 0.6); border-color: #f87171; }
+    }
+    .animate-glow-fail {
+      animation: glow-fail 1.5s infinite ease-in-out;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: rgba(0,0,0,0.2);
+      border-radius: 10px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #444;
+      border-radius: 10px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #b45309;
+    }
+
+    .table-inner-shadow {
+      box-shadow: inset 0 0 100px rgba(0,0,0,0.8);
+    }
+
+    /* Animations for Logs */
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .animate-log-row {
+      animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes indicatorPop {
+      0% { transform: scale(0); opacity: 0; }
+      70% { transform: scale(1.4); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .animate-indicator-pop {
+      animation: indicatorPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { filter: drop-shadow(0 0 2px currentColor); opacity: 1; }
+      50% { filter: drop-shadow(0 0 8px currentColor); opacity: 0.8; }
+    }
+    .animate-indicator-pulse {
+      animation: pulseGlow 2s infinite ease-in-out;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+  }
+}
+</script>
+</head>
+<body class="bg-stone-950 text-stone-100 min-h-screen overflow-x-hidden">
+  <div id="root"></div>
+</body>
+</html>
